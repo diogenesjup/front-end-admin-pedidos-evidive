@@ -1,0 +1,6 @@
+<svg id="change" xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 30 30">
+  <g id="plus">
+    <rect id="form" width="30" height="30" rx="10" fill="#ebebeb"/>
+  </g>
+  <path id="ic_swap_horiz_24px" d="M17.01,11,21,15l-3.99,4V16H10V14h7.01ZM3,9,6.99,5V8H14v2H6.99v3Z" transform="translate(3 3)" fill="#005d6e"/>
+</svg>

@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 30 30">
+  <g id="btn-arrow" transform="translate(-1385.772 -189.772)">
+    <rect id="form" width="30" height="30" rx="10" transform="translate(1385.772 189.772)" fill="#ebebeb"/>
+    <path id="Form_1" data-name="Form 1" d="M560.827,794.44l5.229-5.191a.993.993,0,0,1,1.4,0,.976.976,0,0,1,0,1.387l-5.928,5.885a.993.993,0,0,1-1.4,0l-5.928-5.885a.976.976,0,0,1,0-1.387.993.993,0,0,1,1.4,0Z" transform="translate(607.887 765.599) rotate(-90)" fill="#809fb8"/>
+  </g>
+</svg>

@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 30 30">
+  <g id="edit" transform="translate(0 0)">
+    <g id="plus" transform="translate(0 0)">
+      <rect id="form" width="30" height="30" rx="10" fill="#ebebeb"/>
+    </g>
+    <path id="ic_create_24px" d="M3,15.81v3.371H6.371l9.943-9.943L12.943,5.867ZM18.921,6.632a.9.9,0,0,0,0-1.268l-2.1-2.1a.9.9,0,0,0-1.268,0L13.9,4.906l3.371,3.371,1.645-1.645Z" transform="translate(3.908 3.002)" fill="#005d6e"/>
+  </g>
+</svg>

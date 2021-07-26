@@ -1,0 +1,7 @@
+<svg id="trash" xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 30 30">
+  <g id="plus">
+    <rect id="form" width="30" height="30" rx="10" fill="#ebebeb"/>
+  </g>
+  <path id="ic_delete_24px" d="M18,19a2.006,2.006,0,0,1-2,2H8a2.006,2.006,0,0,1-2-2V7.59H18ZM5,4H8.5l1-1h5l1,1H19V6H5Z" transform="translate(3 3)" fill="#005d6e"/>
+  <path id="União_2" data-name="União 2" d="M6,8V8ZM3,8V8ZM0,8V8Z" transform="translate(18 20.5) rotate(180)" fill="none" stroke="#ebebeb" stroke-width="1"/>
+</svg>

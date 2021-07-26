@@ -1,0 +1,614 @@
+$font: 'Open Sans', sans-serif;
+
+$tablet: 960px;
+$celular: 460px;
+
+$green: #28C76F;
+$darkGreen: #069B8F;
+$lightBlue: #00C5B5;
+$darkBlue: #005D6E;
+$lighteenBlue: #809FB8;
+$red: #DE4751;
+$grey: #D9E1E7;
+$lightGrey: #EBEBEB;
+$black: #2C2C2C;
+$white: #FFFFFF;
+
+* {
+    list-style: none;
+    text-decoration: none;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    outline: 0;
+    background: unset;
+    box-sizing: border-box;
+    font-family: $font;
+    color: $black;
+    letter-spacing: -0.5px;
+}
+
+::selection {
+    background: $lightBlue;
+    color: $white;
+}
+
+button {
+    cursor: pointer;
+}
+
+.container {
+    max-width: calc(1215px + 24px);
+    width: 100%;
+    padding: 0 24px;
+    margin: 0 auto;
+}
+
+.mob {
+    display: none !important;
+    @media screen and (max-width: $celular) {
+        display: block !important;
+    }
+}
+.desk {
+    @media screen and (max-width: $celular) {
+        display: none !important;
+    }
+}
+
+.page {
+    padding: 24px 0;
+    &.busca {
+        @media screen and (max-width: $celular) {
+            .page__content__eventos {
+                dd {
+                    & > header,
+                    & > ul {
+                        display: none;
+                    }
+                }
+            }
+            .page__content__itens {
+                display: block;
+                .header-mob {
+                    margin: 0;
+                    padding: 18px 42px;
+                    background: $grey;
+                    h4 {
+                        font: 600 18px/1 $font;
+                    }
+                }
+                ul {
+                    border-left: 1px solid $grey;
+                }
+            }
+        }
+    }
+    &__header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 24px 40px;
+        border-radius: 10px;
+        background: $lightBlue;
+        margin: 0 0 40px 0;
+        @media screen and (max-width: $tablet) {
+            flex-direction: column;
+        }
+        @media screen and (max-width: $celular) {
+            padding: 24px 16px;
+        }
+        aside {
+            display: flex;
+            align-items: center;
+            @media screen and (max-width: $tablet) {
+                &:first-child {
+                    margin: 0 0 24px 0;
+                }
+            }
+            @media screen and (max-width: $celular) {
+                &:nth-of-type(2) {
+                    flex-direction: column;
+                }
+            }
+            h1 {
+                margin: 0 0 0 32px;
+                color: $white;
+                font: 400 24px/1 $font;
+                @media screen and (max-width: $celular) {
+                    font-size: 18px;
+                    margin: 0 0 0 16px;
+                }
+            }
+            input {
+                display: block;
+                border-radius: 10px;
+                font: 400 15px/1 $font;
+            }
+        }
+        &__busca {
+            position: relative;
+            &::before {
+                content: url("../assets/search-white.svg");
+                position: absolute;
+                top: 50%;
+                left: 24px;
+                transform: translateY(-50%);
+            }
+            input {
+                background: $darkGreen;
+                color: $white;
+                font: 400 16px/1 $font;
+                padding: 14px 24px 15px 64px;
+                width: 225px;
+                @media screen and (max-width: $celular) {
+                    width: 100%;
+                }
+                &::placeholder {
+                    opacity: .64;
+                    color: #D9E1E7;
+                    font-weight: 300;
+                }
+            }
+        }
+        &__calendario {
+            position: relative;
+            margin: 0 0 0 16px;
+            overflow: hidden;
+            @media screen and (max-width: $celular) {
+                margin: 0;
+                width: 100%;
+                margin: 12px 0 0 0;
+            }
+            &::after {
+                content: url("../assets/arrow-blue.svg");
+                position: absolute;
+                top: 46%;
+                right: 24px;
+                transform: translateY(-50%);
+            }
+            &::before {
+                content: url("../assets/calendar-grey.svg");
+                position: absolute;
+                top: 54%;
+                left: 24px;
+                transform: translateY(-50%);
+            }
+            input {
+                width: 240px;
+                padding: 14px 24px 14px 64px;
+                border: 2px solid $grey;
+                background: $white;
+                @media screen and (max-width: $celular) {
+                    width: 100%;
+                }
+                &::-webkit-calendar-picker-indicator,
+                &::-webkit-inner-spin-button {
+                    position: absolute;
+                    left: -80px;
+                    top: 0;
+                    width: 1000%;
+                    height: 100%;
+                }
+            }
+        }
+    }
+    &__content {
+        padding: 0 40px;
+        display: flex;
+        align-items: flex-start;
+        @media screen and (max-width: $tablet) {
+            padding: 0;
+            flex-direction: column;
+        }
+        &__eventos {
+            position: relative;
+            max-width: 305px;
+            width: 100%;
+            margin: 0 40px 0 0;
+            @media screen and (max-width: $tablet) {
+                max-width: 240px;
+                margin: 0 24px 0 0;
+            }
+            @media screen and (max-width: $celular) {
+                max-width: 100%;
+            }
+            dl {
+                dt {
+                    margin: 0 0 32px 0;
+                    cursor: pointer;
+                    color: $darkBlue;
+                    font: 400 19px/1.2 $font;
+                    display: flex;
+                    align-items: flex-start;
+                    width: 100%;
+                    position: relative;
+                    padding: 0 0 0 32px;
+                    @media screen and (max-width: $tablet) {
+                        font-size: 17px;
+                    }
+                    &.active {
+                        &::before {
+                            top: 6px;
+                            transform: scaleY(-1);
+                        }
+                    }
+                    &::before {
+                        content: url("../assets/arrow-blue.svg");
+                        position: absolute;
+                        top: -3px;
+                        left: 0;
+                        transition: 300ms ease;
+                    }
+                }
+                dd {
+                    margin: 0 0 32px 0;
+                    display: none;
+                    &.active {
+                        display: block;
+                    }
+                    & > header {
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        margin: 0 0 16px 0;
+                        h5 {
+                            width: 100%;
+                            text-align: center;
+                            color: $lighteenBlue;
+                            font: 300 15px/1 $font;
+                            &:nth-child(2) {
+                                padding: 0 48px 0 0;
+                            }
+                        }
+                    }
+                    & > ul {
+                        border: 1px solid $lightGrey;
+                        li {
+                            display: flex;
+                            align-items: center;
+                            justify-content: space-between;
+                            padding: 10px 0;
+                            &:not(:last-child) {
+                                border-bottom: 1px solid $lightGrey;
+                            }
+                            &.active {
+                                background: $grey;
+                            }
+                            aside {
+                                display: flex;
+                                align-items: center;
+                                justify-content: center;
+                                width: 100%;
+                                h3 {
+                                    font: 600 18px/1 $font;
+                                }
+                                img {
+                                    margin: 0 8px 0 0;
+                                }
+                            }
+                            button {
+                                margin: 0 16px 0 0;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        &__itens {
+            margin: 53px 0 0 0;
+            width: 100%;
+            @media screen and (max-width: $celular) {
+                display: none;
+                margin: 0;
+            }
+            &.active {
+                display: block;
+            }
+            fieldset {
+                &:disabled {
+                    input {
+                        border: unset;
+                    }
+                    & ~ aside {
+                        div {
+                            display: flex;
+                            justify-content: space-between;
+                        }
+                        & > button {
+                            display: none;
+                        }
+                    }
+                }
+                input {
+                    border: 2px solid $grey;
+                    font: 300 16px/1 $font;
+                    border-radius: 8px;
+                    display: block;
+                    width: 100%;
+                    box-sizing: border-box;
+                    padding: 8px 16px;
+                    transition: 300ms ease;
+                    margin: 0 12px 0 0;
+                    &:first-child {
+                        min-width: 315px;
+                        @media screen and (max-width: $tablet) {
+                            min-width: 270px;
+                        }
+                    }
+                    &:focus {
+                        border-color: $lightBlue;
+                    }
+                }
+            }
+            header {
+                display: flex;
+                margin: 0 0 16px 48px;
+                h5 {
+                    color: $lighteenBlue;
+                    font: 300 15px/1 $font;
+                    &:first-child {
+                        width: 328px;
+                    }
+                    &:not(:first-child) {
+                        width: 98px;
+                    }
+                }
+            }
+            .header-mob {
+                margin-left: 42px;
+                div {
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-between;
+                    aside {
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        span {
+                            display: block;
+                            font: 600 18px/1 $font;
+                        }
+                        img {
+                            margin: 0 8px 0 0;
+                        }
+                    }
+                    button {
+                        font: 600 15px/1 $font;
+                        color: $lighteenBlue;
+                        background: $grey;
+                        border-radius: 8px;
+                        padding: 10px 28px;
+                    }
+                }
+            }
+            ul {
+                border-left: 10px solid $grey;
+                border-top: 1px solid $grey;
+                border-right: 1px solid $grey;
+                border-bottom: 1px solid $grey;
+                li {
+                    display: flex;
+                    align-items: center;
+                    padding: 8px 14px 8px 20px;
+                    &:not(:last-of-type) {
+                        border-bottom: 1px solid $grey;
+                    }
+                    fieldset {
+                        width: 100%;
+                        display: flex;
+                        align-items: center;
+                        @media screen and (max-width: $celular) {
+                            display: none;
+                        }
+                    }
+                    aside {
+                        width: 120px;
+                        @media screen and (max-width: $celular) {
+                            display: none;
+                        }
+                        div {
+                            width: 100%;
+                            display: none;
+                            position: relative;
+                            button {
+                                display: flex;
+                                justify-content: center;
+                                align-items: center;
+                                &.active {
+                                    svg {
+                                        *[fill="#ebebeb"] {
+                                            fill: $lightBlue;
+                                        }
+                                        *[stroke="#ebebeb"] {
+                                            stroke: $lightBlue;
+                                        }
+                                    }
+                                }
+                            }
+                            [data-trocar] {
+                                position: absolute;
+                                bottom: -8px;
+                                right: 38px;
+                                transform: translateY(100%);
+                                background: $lightGrey;
+                                border: 2px solid $grey;
+                                width: 260px;
+                                border-radius: 16px;
+                                padding: 32px;
+                                display: none;
+                                z-index: 999;
+                                &.active {
+                                    display: block;
+                                }
+                                h4 {
+                                    color: $darkBlue;
+                                    font: 500 17px/1.4 $font;
+                                    margin: 0 0 22px 0;
+                                }
+                                fieldset {
+                                    flex-direction: column;
+                                    overflow: hidden;
+                                    position: relative;
+                                    input {
+                                        padding-top: 12px !important;
+                                        padding-bottom: 12px !important;
+                                        background: $white;
+                                        margin: 0 0 14px 0;
+                                        min-width: initial !important;
+                                        width: 100%;
+                                        &::-webkit-calendar-picker-indicator,
+                                        &::-webkit-inner-spin-button {
+                                            position: absolute;
+                                            left: -96px;
+                                            top: 0;
+                                            width: 1000%;
+                                            height: 100%;
+                                        }
+                                    }
+                                }
+                                .select {
+                                    position: relative;
+                                    &::before {
+                                        content: url("../assets/arrow-blue.svg");
+                                        position: absolute;
+                                        top: 50%;
+                                        right: 20px;
+                                        transform: translateY(-50%);
+                                    }
+                                    select {
+                                        appearance: unset;
+                                        background: $white;
+                                        border: 2px solid $grey;
+                                        font: 300 16px/1 $font;
+                                        border-radius: 8px;
+                                        display: block;
+                                        width: 100%;
+                                        box-sizing: border-box;
+                                        padding: 12px 16px;
+                                    }
+                                }
+                                button {
+                                    margin: 18px 0 0 0;
+                                    width: 100%;
+                                    border-radius: 8px;
+                                    padding: 14px 28px;
+                                    color: $white;
+                                    font: 400 15px/1 $font;
+                                    background: $lighteenBlue;
+                                }
+                            }
+                            [data-excluir] {
+                                position: absolute;
+                                bottom: -8px;
+                                right: 38px;
+                                transform: translateY(100%);
+                                background: $lightGrey;
+                                border: 2px solid $grey;
+                                width: 260px;
+                                border-radius: 16px;
+                                padding: 32px;
+                                display: none;
+                                z-index: 999;
+                                &.active {
+                                    display: block;
+                                }
+                                h4 {
+                                    color: $darkBlue;
+                                    font: 500 17px/1.4 $font;
+                                    margin: 0 0 16px 0;
+                                }
+                                button {
+                                    width: 100%;
+                                    border-radius: 8px;
+                                    padding: 14px 28px;
+                                    color: $white;
+                                    font: 400 15px/1 $font;
+                                    background: $red;
+                                }
+                            }
+                            &:not(:last-child) {
+                                margin: 0 6px 0 0;
+                            }
+                        }
+                        & > button {
+                            width: 100%;
+                            display: block;
+                            border-radius: 8px;
+                            padding: 13px 28px;
+                            color: $white;
+                            font: 400 15px/1 $font;
+                            background: $lighteenBlue;
+                        }
+                    }
+                    .mob {
+                        width: 100%;
+                        display: none;
+                        padding: 10px;
+                        @media screen and (max-width: $celular) {
+                            display: block;
+                        }
+                        h2 {
+                            font: 600 18px/1 $font;
+                            margin: 0 0 18px 0;
+                        }
+                        section {
+                            display: flex;
+                            align-items: center;
+                            justify-content: space-between;
+                            div {
+                                width: 100%;
+                                display: flex;
+                                align-items: center;
+                                h5 {
+                                    text-align: center;
+                                    color: $lighteenBlue;
+                                    font: 300 15px/1 $font;
+                                    margin: 0 8px 0 0;
+                                }
+                                h4 {
+                                    text-align: center;
+                                    font: 400 14px/1 $font;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            footer {
+                margin: 16px 0 0 32px;
+                display: flex;
+                justify-content: flex-end;
+                @media screen and (max-width: $celular) {
+                    display: none;
+                }
+                &.novo {
+                    fieldset {
+                        display: flex;
+                        align-items: center;
+                    }
+                    & > button {
+                        display: none;
+                    }
+                }
+                button {
+                    border-radius: 8px;
+                    padding: 13px 28px;
+                    color: $white;
+                    font: 400 15px/1 $font;
+                    background: $lighteenBlue;
+                }
+                fieldset {
+                    display: none;
+                    button {
+                        background: $lighteenBlue;
+                    }
+                }
+                & > button {
+                    width: 180px;
+                    background: $green;
+                }
+            }
+        }
+    }
+}
